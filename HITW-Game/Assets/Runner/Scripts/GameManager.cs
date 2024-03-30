@@ -42,6 +42,9 @@ namespace HyperCasual.Runner
         GameObject m_CurrentTerrainGO;
         GameObject m_LevelMarkersGO;
 
+        private AudioSource audioSource; // Reference to the AudioSource component
+        public AudioClip startSoundClip; // The sound clip to play when the game starts
+
         List<Spawnable> m_ActiveSpawnables = new List<Spawnable>();
 
 #if UNITY_EDITOR
@@ -66,6 +69,11 @@ namespace HyperCasual.Runner
                 m_LevelEditorMode = true;
             }
 #endif
+            audioSource = GetComponent<AudioSource>();
+            if (audioSource == null)
+            {
+                audioSource = gameObject.AddComponent<AudioSource>();
+            }
         }
 
         /// <summary>
@@ -213,6 +221,8 @@ namespace HyperCasual.Runner
         {
             ResetLevel();
             m_IsPlaying = true;
+            audioSource.clip = startSoundClip;
+            audioSource.Play(); // Play the start sound
         }
 
         /// <summary>

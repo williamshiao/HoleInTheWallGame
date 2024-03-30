@@ -6170,7 +6170,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5237897444947184907, guid: a199d962ca53e4a10ba285d5d34bf335, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.039936192
+      value: -0.039936207
       objectReference: {fileID: 0}
     - target: {fileID: 5237897444947184907, guid: a199d962ca53e4a10ba285d5d34bf335, type: 3}
       propertyPath: m_LocalRotation.y
@@ -6955,7 +6955,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiElement: {fileID: 1200551623}
-  popUpDuration: 1.5
+  popUpDuration: 1
   specificSoundClip: {fileID: 8300000, guid: 8cc99a9be734a7e44a46be85490d4dae, type: 3}
   randomSoundClips:
   - {fileID: 8300000, guid: 54252b54903ac404fb3a2c36dca37bb2, type: 3}
