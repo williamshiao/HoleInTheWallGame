@@ -6962,6 +6962,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 997321593a0bd634fa132be49de7f035, type: 3}
   - {fileID: 8300000, guid: 4a3871d08536e4b40a52eb4360bea75f, type: 3}
   scoreText: {fileID: 1234714828}
+  specificObject: {fileID: 467936831}
 --- !u!82 &1747326595
 AudioSource:
   m_ObjectHideFlags: 0

@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections;
-using TMPro; // Required for TextMeshPro
+using TMPro;
 
 public class ShapeHandler : MonoBehaviour
 {
@@ -11,6 +11,7 @@ public class ShapeHandler : MonoBehaviour
     public AudioClip specificSoundClip; // The specific sound clip
     public AudioClip[] randomSoundClips; // Array of random sound clips
     public TextMeshProUGUI scoreText; // Reference to the TextMeshPro text component
+    public GameObject specificObject; // The specific object to disable
     private int score = 0; // The current score
 
     void Start()
@@ -29,6 +30,8 @@ public class ShapeHandler : MonoBehaviour
             PlayRandomSound(); // Play a random sound
             StartCoroutine(PopUpRoutine()); // Start the pop-up coroutine
             IncrementScore(); // Increment the score
+
+            StartCoroutine(DelayedDisabling()); // Start the delayed disabling coroutine
         }
     }
 
@@ -55,5 +58,12 @@ public class ShapeHandler : MonoBehaviour
     void UpdateScoreText()
     {
         scoreText.text = score.ToString("0000"); // Format the score as a four-digit number
+    }
+
+    IEnumerator DelayedDisabling()
+    {
+        specificObject.SetActive(false); // Disable the specific object
+        yield return new WaitForSeconds(1f); // Wait for X seconds
+        gameObject.SetActive(false); // Disable the Shape object
     }
 }
